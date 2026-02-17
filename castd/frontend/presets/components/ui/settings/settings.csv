@@ -1,0 +1,289 @@
+key;value;lang
+settings.cookies.title;Cookies;en-GB
+settings.cookies.title;Cookies;de-DE
+settings.cookies.title;Cookies;nl-NL
+settings.cookies.title;Cookies;fr-FR
+settings.cookies.title;Cookies;es-ES
+settings.cookies.title;Cookies;pt-PT
+settings.cookies.title;Cookie;it-IT
+settings.cookies.title;Файлы cookie;ru-RU
+settings.cookies.title;ملفات تعريف الارتباط;ar-SA
+settings.cookies.title;Cookie;zh-CN
+settings.cookies.title;쿠키;ko-KR
+settings.cookies.title;クッキー;ja-JP
+settings.cookies.title;Cookieak;eu-ES
+settings.cookies.title;Cookies;ca-ES
+settings.cookies.title;Fianáin;ga-IE
+settings.cookies.title;Briosgaidean;gd-GB
+settings.cookies.desc;Choose which cookies we may use.;en-GB
+settings.cookies.desc;Wähle aus welche Cookies wir verwenden dürfen.;de-DE
+settings.cookies.desc;Kies welke cookies we mogen gebruiken.;nl-NL
+settings.cookies.desc;Choisissez les cookies que nous pouvons utiliser.;fr-FR
+settings.cookies.desc;Elige qué cookies podemos usar.;es-ES
+settings.cookies.desc;Escolha os cookies que podemos usar.;pt-PT
+settings.cookies.desc;Scegli quali cookie possiamo usare.;it-IT
+settings.cookies.desc;Выберите какие куки мы можем использовать.;ru-RU
+settings.cookies.desc;اختر ملفات تعريف الارتباط التي يمكننا استخدامها.;ar-SA
+settings.cookies.desc;选择我们可以使用的Cookie。;zh-CN
+settings.cookies.desc;사용할 수 있는 쿠키를 선택하세요.;ko-KR
+settings.cookies.desc;使用するクッキーを選択してください。;ja-JP
+settings.cookies.desc;Aukeratu erabili ditzakegun cookieak.;eu-ES
+settings.cookies.desc;Tria quines cookies podem utilitzar.;ca-ES
+settings.cookies.desc;Roghnaigh na fianáin is féidir linn a úsáid.;ga-IE
+settings.cookies.desc;Tagh na briosgaidean as urrainn dhuinn a chleachdadh.;gd-GB
+settings.cookies.essential;Essential;en-GB
+settings.cookies.essential;Essenziell;de-DE
+settings.cookies.essential;Essentieel;nl-NL
+settings.cookies.essential;Essentiels;fr-FR
+settings.cookies.essential;Esenciales;es-ES
+settings.cookies.essential;Essenciais;pt-PT
+settings.cookies.essential;Essenziali;it-IT
+settings.cookies.essential;Необходимые;ru-RU
+settings.cookies.essential;أساسي;ar-SA
+settings.cookies.essential;必要;zh-CN
+settings.cookies.essential;필수;ko-KR
+settings.cookies.essential;必須;ja-JP
+settings.cookies.essential;Ezinbestekoak;eu-ES
+settings.cookies.essential;Essencials;ca-ES
+settings.cookies.essential;Riachtanach;ga-IE
+settings.cookies.essential;Riatanach;gd-GB
+settings.cookies.analytics;Analytics;en-GB
+settings.cookies.analytics;Analyse;de-DE
+settings.cookies.analytics;Analyse;nl-NL
+settings.cookies.analytics;Analytiques;fr-FR
+settings.cookies.analytics;Analíticas;es-ES
+settings.cookies.analytics;Analíticos;pt-PT
+settings.cookies.analytics;Analitici;it-IT
+settings.cookies.analytics;Аналитика;ru-RU
+settings.cookies.analytics;التحليلات;ar-SA
+settings.cookies.analytics;分析;zh-CN
+settings.cookies.analytics;분석;ko-KR
+settings.cookies.analytics;分析;ja-JP
+settings.cookies.analytics;Analitikak;eu-ES
+settings.cookies.analytics;Analítiques;ca-ES
+settings.cookies.analytics;Anailísíocht;ga-IE
+settings.cookies.analytics;Anailis;gd-GB
+settings.cookies.marketing;Marketing;en-GB
+settings.cookies.marketing;Marketing;de-DE
+settings.cookies.marketing;Marketing;nl-NL
+settings.cookies.marketing;Marketing;fr-FR
+settings.cookies.marketing;Marketing;es-ES
+settings.cookies.marketing;Marketing;pt-PT
+settings.cookies.marketing;Marketing;it-IT
+settings.cookies.marketing;Маркетинг;ru-RU
+settings.cookies.marketing;التسويق;ar-SA
+settings.cookies.marketing;营销;zh-CN
+settings.cookies.marketing;마케팅;ko-KR
+settings.cookies.marketing;マーケティング;ja-JP
+settings.cookies.marketing;Marketina;eu-ES
+settings.cookies.marketing;Màrqueting;ca-ES
+settings.cookies.marketing;Margaíocht;ga-IE
+settings.cookies.marketing;Margaideachd;gd-GB
+settings.theme.title;Appearance;en-GB
+settings.theme.title;Erscheinungsbild;de-DE
+settings.theme.title;Weergave;nl-NL
+settings.theme.title;Apparence;fr-FR
+settings.theme.title;Apariencia;es-ES
+settings.theme.title;Aparência;pt-PT
+settings.theme.title;Aspetto;it-IT
+settings.theme.title;Внешний вид;ru-RU
+settings.theme.title;المظهر;ar-SA
+settings.theme.title;外观;zh-CN
+settings.theme.title;모양;ko-KR
+settings.theme.title;外観;ja-JP
+settings.theme.title;Itxura;eu-ES
+settings.theme.title;Aparença;ca-ES
+settings.theme.title;Cuma;ga-IE
+settings.theme.title;Coltas;gd-GB
+settings.theme.desc;Customise the display to suit your needs.;en-GB
+settings.theme.desc;Passe die Anzeige an deine Bedürfnisse an.;de-DE
+settings.theme.desc;Pas de weergave aan je behoeften aan.;nl-NL
+settings.theme.desc;Personnalisez l'affichage selon vos besoins.;fr-FR
+settings.theme.desc;Personaliza la visualización según tus necesidades.;es-ES
+settings.theme.desc;Personalize a exibição de acordo com suas necessidades.;pt-PT
+settings.theme.desc;Personalizza la visualizzazione in base alle tue esigenze.;it-IT
+settings.theme.desc;Настройте отображение под ваши нужды.;ru-RU
+settings.theme.desc;خصص العرض وفقًا لاحتياجاتك.;ar-SA
+settings.theme.desc;根据您的需求自定义显示。;zh-CN
+settings.theme.desc;필요에 맞게 표시를 사용자 지정하세요.;ko-KR
+settings.theme.desc;表示をニーズに合わせてカスタマイズしてください。;ja-JP
+settings.theme.desc;Egokitu bistaratzea zure beharretara.;eu-ES
+settings.theme.desc;Personalitza la visualització segons les teves necessitats.;ca-ES
+settings.theme.desc;Saincheap an taispeántas de réir do riachtanas.;ga-IE
+settings.theme.desc;Gnàthaich an taisbeanadh a rèir do fheumalachdan.;gd-GB
+settings.theme.dark;Dark mode;en-GB
+settings.theme.dark;Dunkelmodus;de-DE
+settings.theme.dark;Donkere modus;nl-NL
+settings.theme.dark;Mode sombre;fr-FR
+settings.theme.dark;Modo oscuro;es-ES
+settings.theme.dark;Modo escuro;pt-PT
+settings.theme.dark;Modalità scura;it-IT
+settings.theme.dark;Тёмный режим;ru-RU
+settings.theme.dark;الوضع الداكن;ar-SA
+settings.theme.dark;深色模式;zh-CN
+settings.theme.dark;다크 모드;ko-KR
+settings.theme.dark;ダークモード;ja-JP
+settings.theme.dark;Modu iluna;eu-ES
+settings.theme.dark;Mode fosc;ca-ES
+settings.theme.dark;Mód dorcha;ga-IE
+settings.theme.dark;Modh dorcha;gd-GB
+settings.font.size;Font size;en-GB
+settings.font.size;Schriftgröße;de-DE
+settings.font.size;Lettergrootte;nl-NL
+settings.font.size;Taille de police;fr-FR
+settings.font.size;Tamaño de fuente;es-ES
+settings.font.size;Tamanho da fonte;pt-PT
+settings.font.size;Dimensione carattere;it-IT
+settings.font.size;Размер шрифта;ru-RU
+settings.font.size;حجم الخط;ar-SA
+settings.font.size;字体大小;zh-CN
+settings.font.size;글꼴 크기;ko-KR
+settings.font.size;フォントサイズ;ja-JP
+settings.font.size;Letra-tamaina;eu-ES
+settings.font.size;Mida de la lletra;ca-ES
+settings.font.size;Méid an chló;ga-IE
+settings.font.size;Meud a' chrutha-chlò;gd-GB
+settings.font.small;Small;en-GB
+settings.font.small;Klein;de-DE
+settings.font.small;Klein;nl-NL
+settings.font.small;Petit;fr-FR
+settings.font.small;Pequeño;es-ES
+settings.font.small;Pequeno;pt-PT
+settings.font.small;Piccolo;it-IT
+settings.font.small;Маленький;ru-RU
+settings.font.small;صغير;ar-SA
+settings.font.small;小;zh-CN
+settings.font.small;작게;ko-KR
+settings.font.small;小;ja-JP
+settings.font.small;Txikia;eu-ES
+settings.font.small;Petit;ca-ES
+settings.font.small;Beag;ga-IE
+settings.font.small;Beag;gd-GB
+settings.font.default;Default;en-GB
+settings.font.default;Standard;de-DE
+settings.font.default;Standaard;nl-NL
+settings.font.default;Par défaut;fr-FR
+settings.font.default;Predeterminado;es-ES
+settings.font.default;Padrão;pt-PT
+settings.font.default;Predefinito;it-IT
+settings.font.default;По умолчанию;ru-RU
+settings.font.default;افتراضي;ar-SA
+settings.font.default;默认;zh-CN
+settings.font.default;기본;ko-KR
+settings.font.default;デフォルト;ja-JP
+settings.font.default;Lehenetsia;eu-ES
+settings.font.default;Per defecte;ca-ES
+settings.font.default;Réamhshocrú;ga-IE
+settings.font.default;Bun-roghainn;gd-GB
+settings.font.large;Large;en-GB
+settings.font.large;Groß;de-DE
+settings.font.large;Groot;nl-NL
+settings.font.large;Grand;fr-FR
+settings.font.large;Grande;es-ES
+settings.font.large;Grande;pt-PT
+settings.font.large;Grande;it-IT
+settings.font.large;Большой;ru-RU
+settings.font.large;كبير;ar-SA
+settings.font.large;大;zh-CN
+settings.font.large;크게;ko-KR
+settings.font.large;大;ja-JP
+settings.font.large;Handia;eu-ES
+settings.font.large;Gran;ca-ES
+settings.font.large;Mór;ga-IE
+settings.font.large;Mòr;gd-GB
+settings.lang.title;Language;en-GB
+settings.lang.title;Sprache;de-DE
+settings.lang.title;Taal;nl-NL
+settings.lang.title;Langue;fr-FR
+settings.lang.title;Idioma;es-ES
+settings.lang.title;Idioma;pt-PT
+settings.lang.title;Lingua;it-IT
+settings.lang.title;Язык;ru-RU
+settings.lang.title;اللغة;ar-SA
+settings.lang.title;语言;zh-CN
+settings.lang.title;언어;ko-KR
+settings.lang.title;言語;ja-JP
+settings.lang.title;Hizkuntza;eu-ES
+settings.lang.title;Idioma;ca-ES
+settings.lang.title;Teanga;ga-IE
+settings.lang.title;Cànan;gd-GB
+settings.lang.desc;Select your preferred language.;en-GB
+settings.lang.desc;Wähle deine bevorzugte Sprache.;de-DE
+settings.lang.desc;Selecteer je voorkeurstaal.;nl-NL
+settings.lang.desc;Sélectionnez votre langue préférée.;fr-FR
+settings.lang.desc;Selecciona tu idioma preferido.;es-ES
+settings.lang.desc;Selecione seu idioma preferido.;pt-PT
+settings.lang.desc;Seleziona la tua lingua preferita.;it-IT
+settings.lang.desc;Выберите предпочитаемый язык.;ru-RU
+settings.lang.desc;اختر لغتك المفضلة.;ar-SA
+settings.lang.desc;选择您的首选语言。;zh-CN
+settings.lang.desc;원하는 언어를 선택하세요.;ko-KR
+settings.lang.desc;ご希望の言語を選択してください。;ja-JP
+settings.lang.desc;Aukeratu zure hizkuntza hobetsia.;eu-ES
+settings.lang.desc;Selecciona el teu idioma preferit.;ca-ES
+settings.lang.desc;Roghnaigh do theanga roghnaithe.;ga-IE
+settings.lang.desc;Tagh an cànan as fheàrr leat.;gd-GB
+settings.notify.title;Notifications;en-GB
+settings.notify.title;Benachrichtigungen;de-DE
+settings.notify.title;Meldingen;nl-NL
+settings.notify.title;Notifications;fr-FR
+settings.notify.title;Notificaciones;es-ES
+settings.notify.title;Notificações;pt-PT
+settings.notify.title;Notifiche;it-IT
+settings.notify.title;Уведомления;ru-RU
+settings.notify.title;الإشعارات;ar-SA
+settings.notify.title;通知;zh-CN
+settings.notify.title;알림;ko-KR
+settings.notify.title;通知;ja-JP
+settings.notify.title;Jakinarazpenak;eu-ES
+settings.notify.title;Notificacions;ca-ES
+settings.notify.title;Fógraí;ga-IE
+settings.notify.title;Brathan;gd-GB
+settings.notify.desc;Manage your notification preferences.;en-GB
+settings.notify.desc;Verwalte deine Benachrichtigungseinstellungen.;de-DE
+settings.notify.desc;Beheer je meldingsvoorkeuren.;nl-NL
+settings.notify.desc;Gérez vos préférences de notification.;fr-FR
+settings.notify.desc;Gestiona tus preferencias de notificación.;es-ES
+settings.notify.desc;Gerencie suas preferências de notificação.;pt-PT
+settings.notify.desc;Gestisci le tue preferenze di notifica.;it-IT
+settings.notify.desc;Управляйте настройками уведомлений.;ru-RU
+settings.notify.desc;إدارة تفضيلات الإشعارات الخاصة بك.;ar-SA
+settings.notify.desc;管理您的通知偏好设置。;zh-CN
+settings.notify.desc;알림 기본 설정을 관리하세요.;ko-KR
+settings.notify.desc;通知設定を管理してください。;ja-JP
+settings.notify.desc;Kudeatu zure jakinarazpen-hobespenak.;eu-ES
+settings.notify.desc;Gestiona les teves preferències de notificació.;ca-ES
+settings.notify.desc;Bainistigh do roghanna fógra.;ga-IE
+settings.notify.desc;Stiùirich do roghainnean brathan.;gd-GB
+settings.notify.email;Email notifications;en-GB
+settings.notify.email;E-Mail-Benachrichtigungen;de-DE
+settings.notify.email;E-mailmeldingen;nl-NL
+settings.notify.email;Notifications par e-mail;fr-FR
+settings.notify.email;Notificaciones por correo;es-ES
+settings.notify.email;Notificações por e-mail;pt-PT
+settings.notify.email;Notifiche email;it-IT
+settings.notify.email;Уведомления по почте;ru-RU
+settings.notify.email;إشعارات البريد الإلكتروني;ar-SA
+settings.notify.email;邮件通知;zh-CN
+settings.notify.email;이메일 알림;ko-KR
+settings.notify.email;メール通知;ja-JP
+settings.notify.email;Posta elektronikoko jakinarazpenak;eu-ES
+settings.notify.email;Notificacions per correu;ca-ES
+settings.notify.email;Fógraí ríomhphoist;ga-IE
+settings.notify.email;Brathan puist-d;gd-GB
+settings.notify.push;Push notifications;en-GB
+settings.notify.push;Push-Benachrichtigungen;de-DE
+settings.notify.push;Pushmeldingen;nl-NL
+settings.notify.push;Notifications push;fr-FR
+settings.notify.push;Notificaciones push;es-ES
+settings.notify.push;Notificações push;pt-PT
+settings.notify.push;Notifiche push;it-IT
+settings.notify.push;Push-уведомления;ru-RU
+settings.notify.push;إشعارات الدفع;ar-SA
+settings.notify.push;推送通知;zh-CN
+settings.notify.push;푸시 알림;ko-KR
+settings.notify.push;プッシュ通知;ja-JP
+settings.notify.push;Push jakinarazpenak;eu-ES
+settings.notify.push;Notificacions push;ca-ES
+settings.notify.push;Fógraí brú;ga-IE
+settings.notify.push;Brathan putaidh;gd-GB

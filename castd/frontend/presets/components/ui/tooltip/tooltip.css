@@ -1,0 +1,108 @@
+/* Copyright 2025 Vivian Voss. Licensed under the Apache License, Version 2.0. */
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/* cm.ui.tooltip — Tooltip styling */
+
+@layer castd {
+    .as-tooltip-trigger {
+        position: relative;
+        display: inline-flex;
+    }
+
+    .as-tooltip {
+        --tooltip-bg: var(--text);
+        --tooltip-color: var(--bg);
+        --tooltip-arrow-size: 6px;
+
+        position: absolute;
+        z-index: 1000;
+        padding: calc(var(--unit) * 0.75) calc(var(--unit) * 1.5);
+        background: var(--tooltip-bg);
+        color: var(--tooltip-color);
+        font-size: 0.8125rem;
+        line-height: 1.4;
+        white-space: nowrap;
+        border-radius: var(--tooltip-radius, calc(var(--unit) * 0.5));
+        max-width: var(--tooltip-max-width, 200px);
+
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.15s ease,
+            visibility 0.15s ease;
+        pointer-events: none;
+
+        /* Arrow */
+        &::before {
+            content: "";
+            position: absolute;
+            border: var(--tooltip-arrow-size) solid transparent;
+        }
+
+        /* Default: top */
+        bottom: calc(100% + var(--tooltip-arrow-size) + 4px);
+        left: 50%;
+        transform: translateX(-50%);
+
+        &::before {
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-top-color: var(--tooltip-bg);
+        }
+
+        /* Position: bottom */
+        &.like-bottom {
+            bottom: auto;
+            top: calc(100% + var(--tooltip-arrow-size) + 4px);
+
+            &::before {
+                top: auto;
+                bottom: 100%;
+                border-top-color: transparent;
+                border-bottom-color: var(--tooltip-bg);
+            }
+        }
+
+        /* Position: left */
+        &.like-left {
+            bottom: auto;
+            left: auto;
+            right: calc(100% + var(--tooltip-arrow-size) + 4px);
+            top: 50%;
+            transform: translateY(-50%);
+
+            &::before {
+                top: 50%;
+                left: 100%;
+                transform: translateY(-50%);
+                border-top-color: transparent;
+                border-left-color: var(--tooltip-bg);
+            }
+        }
+
+        /* Position: right */
+        &.like-right {
+            bottom: auto;
+            left: calc(100% + var(--tooltip-arrow-size) + 4px);
+            top: 50%;
+            transform: translateY(-50%);
+
+            &::before {
+                top: 50%;
+                right: 100%;
+                left: auto;
+                transform: translateY(-50%);
+                border-top-color: transparent;
+                border-right-color: var(--tooltip-bg);
+            }
+        }
+    }
+
+    /* Show on hover/focus */
+    .as-tooltip-trigger:hover .as-tooltip,
+    .as-tooltip-trigger:focus-within .as-tooltip {
+        opacity: 1;
+        visibility: visible;
+    }
+}

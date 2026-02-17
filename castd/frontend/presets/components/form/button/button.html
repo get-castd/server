@@ -1,0 +1,62 @@
+{# cm.form.button — Button preset #}
+<button
+    type="{{ type | default='button' }}"
+    {!
+    if
+    variant
+    !}
+    class="is-{{ variant }}"
+    {!
+    endif
+    !}{!
+    if
+    disabled
+    !}
+    disabled{!
+    endif
+    !}{!
+    if
+    action
+    !}
+    data-cm-action="{{ action }}"
+    data-cm-method="{{ method | default='POST' }}"
+    {!
+    endif
+    !}{!
+    if
+    loading
+    !}
+    data-cm-loading="{{ loading }}"
+    {!
+    endif
+    !}{!
+    if
+    loading-class
+    !}
+    data-cm-loading-class="{{ loading-class }}"
+    {!
+    endif
+    !}{!
+    if
+    data
+    !}
+    data-cm-data="{{ data }}"
+    {!
+    endif
+    !}{!
+    if
+    open
+    !}
+    data-cm-open="{{ open }}"
+    {!
+    endif
+    !}{!
+    if
+    close
+    !}
+    data-cm-close{!
+    endif
+    !}
+>
+    {{ label }}
+</button>

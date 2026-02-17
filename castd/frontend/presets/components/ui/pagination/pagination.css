@@ -1,0 +1,77 @@
+/* Copyright 2025 Vivian Voss. Licensed under the Apache License, Version 2.0. */
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/* cm.ui.pagination — Page navigation styling */
+
+@layer castd {
+    .as-pagination {
+        display: flex;
+        align-items: center;
+        gap: var(--pagination-gap, calc(var(--unit) * 0.5));
+        font-variant-numeric: tabular-nums;
+
+        a,
+        button,
+        span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: var(--pagination-btn-size, calc(var(--unit) * 5));
+            height: var(--pagination-btn-size, calc(var(--unit) * 5));
+            padding: 0 calc(var(--unit) * 1);
+            background: var(--pagination-bg, transparent);
+            border: 1px solid var(--pagination-border, var(--control));
+            border-radius: var(--pagination-radius, calc(var(--unit) * 0.5));
+            color: var(--pagination-color, var(--text));
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition:
+                background 0.15s ease,
+                border-color 0.15s ease;
+        }
+
+        a:hover,
+        button:hover {
+            background: var(--pagination-hover-bg, var(--surface));
+            border-color: var(--pagination-hover-border, var(--control));
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Current page */
+        [aria-current="page"],
+        .is-current {
+            background: var(--pagination-active-bg, var(--accent));
+            border-color: var(--pagination-active-border, var(--accent));
+            color: var(--pagination-active-color, var(--on-accent));
+            pointer-events: none;
+        }
+
+        /* Disabled */
+        [aria-disabled="true"],
+        .is-disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* Ellipsis */
+        .pagination-ellipsis {
+            border: none;
+            background: none;
+            min-width: auto;
+            padding: 0 calc(var(--unit) * 0.5);
+        }
+
+        /* Navigation buttons */
+        .pagination-prev,
+        .pagination-next,
+        .pagination-first,
+        .pagination-last {
+            font-weight: 500;
+        }
+    }
+}

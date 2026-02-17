@@ -1,0 +1,10 @@
+{# cm.form.range — Range slider preset #}
+{! if label !}<label{! if id !} for="{{ id }}"{! endif !}>{{ label }}</label>{! endif !}
+<input type="range"
+    {! if id !}id="{{ id }}"{! endif !}
+    {! if name !}name="{{ name }}"{! endif !}
+    {! if value !}value="{{ value }}"{! endif !}
+    {! if min !}min="{{ min }}"{! endif !}
+    {! if max !}max="{{ max }}"{! endif !}
+    {! if step !}step="{{ step }}"{! endif !}
+    {! if disabled !}disabled{! endif !}>

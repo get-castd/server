@@ -1,0 +1,11 @@
+{# cm.form.select — Select dropdown preset #}
+{! if label !}<label{! if id !} for="{{ id }}"{! endif !}>{{ label }}</label>{! endif !}
+<select
+    {! if id !}id="{{ id }}"{! endif !}
+    {! if name !}name="{{ name }}"{! endif !}
+    {! if required !}required{! endif !}
+    {! if disabled !}disabled{! endif !}
+    {! if multiple !}multiple{! endif !}>
+    {! if placeholder !}<option value="" disabled selected>{{ placeholder }}</option>{! endif !}
+    {{ options }}
+</select>

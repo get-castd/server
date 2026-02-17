@@ -1,0 +1,11 @@
+{# cm.form.checkbox — Checkbox preset (toggle switch style) #}
+<label>
+    <input type="checkbox"
+        {! if id !}id="{{ id }}"{! endif !}
+        {! if name !}name="{{ name }}"{! endif !}
+        {! if value !}value="{{ value }}"{! endif !}
+        {! if checked !}checked{! endif !}
+        {! if required !}required{! endif !}
+        {! if disabled !}disabled{! endif !}>
+    {{ label }}
+</label>

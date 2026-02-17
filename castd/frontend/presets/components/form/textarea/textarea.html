@@ -1,0 +1,13 @@
+{# cm.form.textarea — Textarea preset #}
+{! if label !}<label{! if id !} for="{{ id }}"{! endif !}>{{ label }}</label>{! endif !}
+<textarea
+    {! if id !}id="{{ id }}"{! endif !}
+    {! if name !}name="{{ name }}"{! endif !}
+    {! if placeholder !}placeholder="{{ placeholder }}"{! endif !}
+    {! if rows !}rows="{{ rows }}"{! endif !}
+    {! if cols !}cols="{{ cols }}"{! endif !}
+    {! if minlength !}minlength="{{ minlength }}"{! endif !}
+    {! if maxlength !}maxlength="{{ maxlength }}"{! endif !}
+    {! if required !}required{! endif !}
+    {! if disabled !}disabled{! endif !}
+    {! if readonly !}readonly{! endif !}>{{ value }}</textarea>

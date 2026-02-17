@@ -1,0 +1,7 @@
+{# cm.form.progress — Progress bar preset #}
+{! if label !}<label{! if id !} for="{{ id }}"{! endif !}>{{ label }}</label>{! endif !}
+<progress
+    {! if id !}id="{{ id }}"{! endif !}
+    {! if value !}value="{{ value }}"{! endif !}
+    max="{{ max | default='100' }}"
+    {! if style !}style="{{ style }}"{! endif !}>{! if value !}{{ value }}%{! endif !}</progress>

@@ -1,0 +1,6 @@
+{# cm.ui.alert — Alert notification preset #}
+<aside class="as-alert{! if state !} is-{{ state }}{! endif !}"
+    {! if role !}role="{{ role }}"{! endif !}
+    {! if style !}style="{{ style }}"{! endif !}>
+    {{ content | raw }}
+</aside>

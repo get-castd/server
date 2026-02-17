@@ -1,0 +1,6 @@
+{# cm.ui.avatar — User avatar preset #}
+<span class="as-avatar{! if size !} like-{{ size }}{! endif !}{! if shape !} like-{{ shape }}{! endif !}{! if status !} has-status is-{{ status }}{! endif !}"
+    {! if initials !}data-initials="{{ initials }}"{! endif !}
+    {! if style !}style="{{ style }}"{! endif !}>
+    {! if src !}<img src="{{ src }}" alt="{{ alt }}">{! endif !}
+</span>

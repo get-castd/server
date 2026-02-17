@@ -1,0 +1,8 @@
+{# cm.layout.breadcrumb — Breadcrumb navigation preset #}
+<nav class="as-breadcrumb{! if pills !} like-pills{! endif !}"
+    aria-label="{{ label | default: 'Breadcrumb' }}"
+    {! if style !}style="{{ style }}"{! endif !}>
+    <ol>
+        {{ content | raw }}
+    </ol>
+</nav>

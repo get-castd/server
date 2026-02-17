@@ -1,0 +1,30 @@
+{# cm.ui.skeleton — Loading placeholder preset #}
+<div
+    class="as-skeleton{! if type !} like-{{ type }}{! endif !}{! if animate == false !}{! else !} is-animated{! endif !}"
+    aria-hidden="true"
+    {!
+    if
+    width
+    !}style="width: {{ width }}{! if height !}; height: {{ height }}{! endif !}{! if style !}; {{ style }}{! endif !}"
+    {!
+    else
+    !}{!
+    if
+    height
+    !}style="height: {{ height }}{! if style !}; {{ style }}{! endif !}"
+    {!
+    else
+    !}{!
+    if
+    style
+    !}style="{{ style }}"
+    {!
+    endif
+    !}{!
+    endif
+    !}{!
+    endif
+    !}
+>
+    {! if lines !}{! each line in lines !}<span></span>{! endeach !}{! endif !}
+</div>

@@ -1,0 +1,96 @@
+/* Copyright 2025 Vivian Voss. Licensed under the Apache License, Version 2.0. */
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/* cm.ui.skeleton — Loading placeholder styling */
+
+@layer castd {
+    .as-skeleton {
+        --skeleton-bg: var(--control);
+        --skeleton-highlight: oklch(100% 0 0 / 20%);
+
+        background: var(--skeleton-bg);
+        border-radius: var(--skeleton-radius, calc(var(--unit) * 0.5));
+        overflow: hidden;
+
+        /* Text skeleton with multiple lines */
+        &.like-text {
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--unit) * 1);
+
+            span {
+                display: block;
+                height: 1em;
+                background: var(--skeleton-bg);
+                border-radius: calc(var(--unit) * 0.25);
+
+                &:last-child {
+                    width: 70%;
+                }
+            }
+        }
+
+        /* Circle skeleton (avatars) */
+        &.like-circle {
+            border-radius: 50%;
+            aspect-ratio: 1;
+        }
+
+        /* Rectangle skeleton (images, cards) */
+        &.like-rect {
+            width: 100%;
+            min-height: calc(var(--unit) * 20);
+        }
+
+        /* Card skeleton */
+        &.like-card {
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--unit) * 2);
+            padding: calc(var(--unit) * 2);
+
+            &::before {
+                content: "";
+                display: block;
+                height: calc(var(--unit) * 20);
+                background: var(--skeleton-bg);
+                border-radius: calc(var(--unit) * 0.5);
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                height: calc(var(--unit) * 8);
+                background: var(--skeleton-bg);
+                border-radius: calc(var(--unit) * 0.5);
+            }
+        }
+
+        /* Shimmer animation */
+        &.is-animated {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--skeleton-highlight),
+                    transparent
+                );
+                animation: skeleton-shimmer 1.5s ease-in-out infinite;
+            }
+        }
+    }
+
+    @keyframes skeleton-shimmer {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+}

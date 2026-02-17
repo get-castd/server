@@ -1,0 +1,7 @@
+{# cm.ui.chip — Interactive chip/tag preset #}
+<span class="as-chip{! if selected !} is-selected{! endif !}{! if disabled !} is-disabled{! endif !}"
+    {! if style !}style="{{ style }}"{! endif !}>
+    {! if icon !}<span class="chip-icon">{{ icon | raw }}</span>{! endif !}
+    <span class="chip-label">{{ label }}</span>
+    {! if removable !}<button type="button" class="chip-remove" aria-label="Remove {{ label }}">×</button>{! endif !}
+</span>

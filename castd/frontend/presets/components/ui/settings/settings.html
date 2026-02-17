@@ -1,0 +1,149 @@
+{# cm.ui.settings — Settings wizard dialog preset #}
+<dialog
+    id="{{ id | default='settings-dialog' }}"
+    class="as-settings-dialog"
+    aria-labelledby="{{ id | default='settings-dialog' }}-title"
+    aria-modal="true"
+>
+    <div class="as-wizard" id="{{ id | default='settings-dialog' }}-wizard">
+        <section>
+            {! if cookies !}
+            <div class="settings-slide" data-slide="cookies">
+                <h2 id="{{ id | default='settings-dialog' }}-title">
+                    {{ "settings.cookies.title" | translate }}
+                </h2>
+                <p>{{ "settings.cookies.desc" | translate }}</p>
+                <fieldset>
+                    <label>
+                        <span
+                            >{{ "settings.cookies.essential" | translate
+                            }}</span
+                        >
+                        <input
+                            type="checkbox"
+                            name="cookies-essential"
+                            checked
+                            disabled
+                        />
+                    </label>
+                    <label>
+                        <span
+                            >{{ "settings.cookies.analytics" | translate
+                            }}</span
+                        >
+                        <input type="checkbox" name="cookies-analytics" />
+                    </label>
+                    <label>
+                        <span
+                            >{{ "settings.cookies.marketing" | translate
+                            }}</span
+                        >
+                        <input type="checkbox" name="cookies-marketing" />
+                    </label>
+                </fieldset>
+            </div>
+            {! endif !} {! if theme !}
+            <div class="settings-slide" data-slide="theme">
+                <h2>{{ "settings.theme.title" | translate }}</h2>
+                <p>{{ "settings.theme.desc" | translate }}</p>
+                <fieldset>
+                    <label>
+                        <span>{{ "settings.theme.dark" | translate }}</span>
+                        <input
+                            type="checkbox"
+                            name="theme-dark"
+                            role="switch"
+                        />
+                    </label>
+                </fieldset>
+                {! if fontsize !}
+                <fieldset>
+                    <legend>{{ "settings.font.size" | translate }}</legend>
+                    <div class="as-segments">
+                        <label
+                            ><input
+                                type="radio"
+                                name="fontsize"
+                                value="sm"
+                            /><span
+                                >{{ "settings.font.small" | translate }}</span
+                            ></label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="fontsize"
+                                value="md"
+                                checked
+                            /><span
+                                >{{ "settings.font.default" | translate }}</span
+                            ></label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="fontsize"
+                                value="lg"
+                            /><span
+                                >{{ "settings.font.large" | translate }}</span
+                            ></label
+                        >
+                    </div>
+                </fieldset>
+                {! endif !}
+            </div>
+            {! endif !} {! if language !}
+            <div class="settings-slide" data-slide="language">
+                <h2>{{ "settings.lang.title" | translate }}</h2>
+                <p>{{ "settings.lang.desc" | translate }}</p>
+                <fieldset>
+                    <select name="language">
+                        {! if languages !} {{ languages | raw }} {! else !}
+                        <option value="en-GB">English</option>
+                        <option value="de-DE">Deutsch</option>
+                        <option value="nl-NL">Nederlands</option>
+                        <option value="fr-FR">Français</option>
+                        <option value="es-ES">Español</option>
+                        <option value="pt-PT">Português</option>
+                        <option value="it-IT">Italiano</option>
+                        <option value="ru-RU">Русский</option>
+                        <option value="ar-SA">العربية</option>
+                        <option value="zh-CN">中文</option>
+                        <option value="ko-KR">한국어</option>
+                        <option value="ja-JP">日本語</option>
+                        <option value="eu-ES">Euskara</option>
+                        <option value="ca-ES">Català</option>
+                        <option value="ga-IE">Gaeilge</option>
+                        <option value="gd-GB">Gàidhlig</option>
+                        {! endif !}
+                    </select>
+                </fieldset>
+            </div>
+            {! endif !} {! if notifications !}
+            <div class="settings-slide" data-slide="notifications">
+                <h2>{{ "settings.notify.title" | translate }}</h2>
+                <p>{{ "settings.notify.desc" | translate }}</p>
+                <fieldset>
+                    <label>
+                        <span>{{ "settings.notify.email" | translate }}</span>
+                        <input
+                            type="checkbox"
+                            name="notify-email"
+                            role="switch"
+                        />
+                    </label>
+                    <label>
+                        <span>{{ "settings.notify.push" | translate }}</span>
+                        <input
+                            type="checkbox"
+                            name="notify-push"
+                            role="switch"
+                        />
+                    </label>
+                </fieldset>
+            </div>
+            {! endif !} {! if custom_slides !}{{ custom_slides | raw }}{! endif
+            !}
+        </section>
+    </div>
+</dialog>

@@ -1,0 +1,11 @@
+{# cm.form.meter — Meter gauge preset #}
+{! if label !}<label{! if id !} for="{{ id }}"{! endif !}>{{ label }}</label>{! endif !}
+<meter
+    {! if id !}id="{{ id }}"{! endif !}
+    value="{{ value }}"
+    min="{{ min | default='0' }}"
+    max="{{ max | default='1' }}"
+    {! if low !}low="{{ low }}"{! endif !}
+    {! if high !}high="{{ high }}"{! endif !}
+    {! if optimum !}optimum="{{ optimum }}"{! endif !}
+    {! if style !}style="{{ style }}"{! endif !}>{{ value }}</meter>

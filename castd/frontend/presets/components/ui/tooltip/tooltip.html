@@ -1,0 +1,6 @@
+{# cm.ui.tooltip — Tooltip preset #}
+<span class="as-tooltip-trigger"
+    {! if style !}style="{{ style }}"{! endif !}>
+    {{ trigger | raw }}
+    <span class="as-tooltip{! if position !} like-{{ position }}{! endif !}" role="tooltip">{{ content }}</span>
+</span>

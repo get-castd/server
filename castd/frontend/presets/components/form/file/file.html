@@ -1,0 +1,9 @@
+{# cm.form.file — File input preset #}
+{! if label !}<label{! if id !} for="{{ id }}"{! endif !}>{{ label }}</label>{! endif !}
+<input type="file"
+    {! if id !}id="{{ id }}"{! endif !}
+    {! if name !}name="{{ name }}"{! endif !}
+    {! if accept !}accept="{{ accept }}"{! endif !}
+    {! if multiple !}multiple{! endif !}
+    {! if required !}required{! endif !}
+    {! if disabled !}disabled{! endif !}>

@@ -1,0 +1,6 @@
+{# cm.layout.nav — Navigation menu preset #}
+<nav
+    {! if label !}aria-label="{{ label }}"{! endif !}
+    {! if style !}style="{{ style }}"{! endif !}>
+    {{ content | raw }}
+</nav>

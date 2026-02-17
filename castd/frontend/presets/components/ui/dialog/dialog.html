@@ -1,0 +1,8 @@
+{# cm.ui.dialog — Modal dialog preset #}
+<dialog
+    {! if id !}id="{{ id }}"{! endif !}
+    {! if label !}aria-labelledby="{{ id }}-title"{! endif !}
+    {! if style !}style="{{ style }}"{! endif !}>
+    {! if label !}<h3 id="{{ id }}-title">{{ label }}</h3>{! endif !}
+    {{ content | raw }}
+</dialog>

@@ -1,0 +1,4 @@
+{# cm.ui.pagination — Page navigation preset #}
+<nav class="as-pagination" aria-label="{! if label !}{{ label }}{! else !}{{ "pagination.label" | translate }}{! endif !}"{! if style !} style="{{ style }}"{! endif !}>
+    {{ content | raw }}
+</nav>

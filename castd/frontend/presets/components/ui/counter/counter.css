@@ -1,0 +1,78 @@
+/* Copyright 2025 Vivian Voss. Licensed under the Apache License, Version 2.0. */
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/* cm.ui.counter — Numeric counter styling */
+
+@layer castd {
+    .as-counter {
+        display: inline-flex;
+        flex-direction: column;
+        gap: calc(var(--unit) * 0.5);
+
+        .counter-controls {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--counter-border, var(--control));
+            border-radius: var(--counter-radius, calc(var(--unit) * 1));
+            overflow: hidden;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(var(--unit) * 5);
+            height: calc(var(--unit) * 5);
+            padding: 0;
+            background: var(--counter-btn-bg, var(--control));
+            border: none;
+            color: var(--counter-btn-color, var(--text));
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: background 0.15s ease;
+
+            &:hover:not(:disabled) {
+                background: var(--counter-btn-hover-bg, var(--surface));
+            }
+
+            &:active:not(:disabled) {
+                background: var(--counter-btn-active-bg, var(--control));
+            }
+
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+
+        input[type="number"] {
+            width: var(--counter-input-width, calc(var(--unit) * 8));
+            height: calc(var(--unit) * 5);
+            padding: 0;
+            border: none;
+            border-left: 1px solid var(--counter-border, var(--control));
+            border-right: 1px solid var(--counter-border, var(--control));
+            background: var(--counter-input-bg, var(--bg));
+            text-align: center;
+            font-size: 1rem;
+            font-variant-numeric: tabular-nums;
+            -moz-appearance: textfield;
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &:focus {
+                outline: none;
+                background: var(--counter-input-focus-bg, var(--surface));
+            }
+        }
+
+        &.is-disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+}

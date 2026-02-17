@@ -1,0 +1,7 @@
+{# cm.layout.sidebar — Side navigation preset #}
+<aside
+    {! if id !}id="{{ id }}"{! endif !}
+    {! if label !}aria-label="{{ label }}"{! endif !}
+    {! if style !}style="{{ style }}"{! endif !}>
+    {{ content | raw }}
+</aside>

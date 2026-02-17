@@ -1,0 +1,13 @@
+{# cm.form.search — Search input preset #}
+{! if label !}<label{! if id !} for="{{ id }}"{! endif !}>{{ label }}</label>{! endif !}
+<input type="search"
+    {! if id !}id="{{ id }}"{! endif !}
+    {! if name !}name="{{ name }}"{! endif !}
+    {! if placeholder !}placeholder="{{ placeholder }}"{! endif !}
+    {! if value !}value="{{ value }}"{! endif !}
+    {! if minlength !}minlength="{{ minlength }}"{! endif !}
+    {! if maxlength !}maxlength="{{ maxlength }}"{! endif !}
+    {! if pattern !}pattern="{{ pattern }}"{! endif !}
+    {! if required !}required{! endif !}
+    {! if disabled !}disabled{! endif !}
+    {! if autofocus !}autofocus{! endif !}>

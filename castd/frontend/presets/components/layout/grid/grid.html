@@ -1,0 +1,5 @@
+{# cm.layout.grid — Flexible grid container preset #}
+<div class="as-grid"
+    style="--columns: {{ columns | default: 1 }}{! if gap !}; --gap: {{ gap }}{! endif !}{! if style !}; {{ style }}{! endif !}">
+    {{ content | raw }}
+</div>

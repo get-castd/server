@@ -1,0 +1,7 @@
+{# cm.ui.card — Card container preset #}
+<article class="as-card{! if shadow !} show-shadow{! endif !}{! if hover !} has-hover{! endif !}"
+    {! if style !}style="{{ style }}"{! endif !}>
+    {! if header !}<header>{{ header }}</header>{! endif !}
+    {{ content | raw }}
+    {! if footer !}<footer>{{ footer | raw }}</footer>{! endif !}
+</article>

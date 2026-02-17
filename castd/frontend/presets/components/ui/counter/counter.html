@@ -1,0 +1,17 @@
+{# cm.ui.counter — Numeric counter with increment/decrement #}
+<div class="as-counter{! if disabled !} is-disabled{! endif !}"
+    {! if style !}style="{{ style }}"{! endif !}>
+    {! if label !}<label{! if id !} for="{{ id }}"{! endif !}>{{ label }}</label>{! endif !}
+    <div class="counter-controls">
+        <button type="button" class="counter-decrement" aria-label="Decrease">−</button>
+        <input type="number"
+            {! if id !}id="{{ id }}"{! endif !}
+            {! if name !}name="{{ name }}"{! endif !}
+            value="{{ value | default='0' }}"
+            {! if min !}min="{{ min }}"{! endif !}
+            {! if max !}max="{{ max }}"{! endif !}
+            step="{{ step | default='1' }}"
+            {! if disabled !}disabled{! endif !}>
+        <button type="button" class="counter-increment" aria-label="Increase">+</button>
+    </div>
+</div>

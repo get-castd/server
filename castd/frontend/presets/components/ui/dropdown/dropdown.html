@@ -1,0 +1,8 @@
+{# cm.ui.dropdown — Dropdown menu preset #}
+<details class="as-dropdown-trigger"
+    {! if anchor !}style="--anchor: {{ anchor }}"{! endif !}>
+    <summary>{{ trigger }}</summary>
+    <ul class="as-dropdown">
+        {{ content | raw }}
+    </ul>
+</details>

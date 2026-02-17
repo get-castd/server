@@ -1,0 +1,96 @@
+/* Copyright 2025 Vivian Voss. Licensed under the Apache License, Version 2.0. */
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/* cm.ui.avatar — User avatar styling */
+
+@layer castd {
+    .as-avatar {
+        --avatar-size: 2.5rem;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        border-radius: 50%;
+        background: var(--avatar-bg, var(--control));
+        color: var(--avatar-color, var(--text));
+        font-weight: 500;
+        font-size: calc(var(--avatar-size) * 0.4);
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Initials fallback */
+        &:not(:has(img))::before {
+            content: attr(data-initials);
+        }
+
+        /* Sizes */
+        &.like-xs {
+            --avatar-size: 1.5rem;
+        }
+        &.like-sm {
+            --avatar-size: 2rem;
+        }
+        &.like-md {
+            --avatar-size: 2.5rem;
+        }
+        &.like-lg {
+            --avatar-size: 3.5rem;
+        }
+        &.like-xl {
+            --avatar-size: 5rem;
+        }
+
+        /* Shapes */
+        &.like-square {
+            border-radius: var(--radius, calc(var(--unit) * 1));
+        }
+
+        /* Status indicator */
+        &.has-status::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: calc(var(--avatar-size) * 0.25);
+            height: calc(var(--avatar-size) * 0.25);
+            border-radius: 50%;
+            border: 2px solid var(--bg);
+            background: var(--control);
+        }
+
+        &.is-online::after {
+            background: var(--success);
+        }
+        &.is-offline::after {
+            background: var(--control);
+        }
+        &.is-busy::after {
+            background: var(--error);
+        }
+        &.is-away::after {
+            background: var(--warning);
+        }
+    }
+
+    /* Avatar group */
+    .as-avatar-group {
+        display: flex;
+
+        .as-avatar {
+            margin-left: calc(var(--avatar-size) * -0.25);
+            border: 2px solid var(--bg);
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}

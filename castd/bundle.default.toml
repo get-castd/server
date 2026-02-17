@@ -1,0 +1,8 @@
+# castd bundle configuration
+# Copy this file to workspace/{bundle}/bundle.toml and adjust values as needed.
+
+[routing]
+# Template folder to serve as homepage (/)
+# The server resolves this to templates/{home}/{home}.html
+# Default: "home"
+home = "home"

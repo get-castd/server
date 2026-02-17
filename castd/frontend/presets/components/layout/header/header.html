@@ -1,0 +1,7 @@
+{# cm.layout.header — Site header preset #}
+<header
+    {! if id !}id="{{ id }}"{! endif !}
+    {! if style !}style="{{ style }}"{! endif !}>
+    {! if logo !}<a href="{{ logo_href | default: '/' }}">{{ logo | raw }}</a>{! endif !}
+    {{ content | raw }}
+</header>

@@ -1,0 +1,6 @@
+{# cm.form.segment — Segmented control preset #}
+<fieldset class="as-segments{! if stretch !} like-stretch{! endif !}"
+    {! if style !}style="{{ style }}"{! endif !}>
+    {! if legend !}<legend class="sr-only">{{ legend }}</legend>{! endif !}
+    {{ content | raw }}
+</fieldset>

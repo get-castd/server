@@ -1,0 +1,29 @@
+# castd server configuration
+# Copy this file to server.toml and adjust values as needed.
+
+[server]
+# Port for HTTP server (ignored when using socket)
+# Default: 1337
+port = 1337
+
+# Default bundle to serve from workspace/
+# If not set, bundle must be specified via --bundle flag
+# bundle = "my-bundle"
+
+# Unix socket path for reverse proxy (e.g., Caddy, nginx)
+# When set, the server listens on this socket instead of a TCP port
+# socket = "/var/run/castd.sock"
+
+[extensions]
+# Lua extensions to enable from backend/extensions/
+# Each entry is a filename without .lua extension
+# enabled = ["discount", "checkout", "stock_feed"]
+
+# Maximum execution time per extension in milliseconds
+# Default: 100
+# timeout_ms = 100
+
+# Route bindings for extensions (when filename differs from route)
+# [extensions.routes]
+# "/checkout" = "checkout"
+# "/contact/send" = "contact_form"
