@@ -57,6 +57,46 @@ The `castd/` directory is the framework. Treat it as read-only —
 updates arrive via `git pull upstream main`. Your work lives entirely
 in `workspace/`.
 
+### Pre-built Binaries
+
+The distribution ships with binaries for common platforms:
+
+| Binary | Platform |
+|--------|----------|
+| `castd-darwin-arm64` | macOS (Apple Silicon) |
+| `castd-darwin-x86_64` | macOS (Intel) |
+| `castd-linux-x86_64` | Linux (x86_64) |
+| `castd-linux-arm64` | Linux (ARM64) |
+| `castd-freebsd-x86_64` | FreeBSD (x86_64) |
+
+The control script (`castd.sh`) detects your platform automatically
+and selects the correct binary. No manual step required.
+
+### Building from Source
+
+If your platform is not listed above, or you prefer to compile
+yourself, the source archive is available in each GitHub release
+as `src.tar.xz`.
+
+Extract and build:
+
+```bash
+tar xf src.tar.xz
+cd castd/backend
+cargo build --release
+```
+
+The compiled binary appears at `target/release/castd`. Copy it into
+place with the correct platform suffix:
+
+```bash
+cp target/release/castd ../bin/castd-$(uname -s | tr '[:upper:]' '[:lower:]')-$(uname -m)
+```
+
+**Requirements:** A working [Rust](https://www.rust-lang.org/tools/install)
+toolchain (stable channel). No other dependencies — SQLite and Lua are
+compiled in.
+
 ---
 
 ## Configuration
@@ -362,9 +402,10 @@ operating system and architecture:
 castd/backend/bin/castd-{os}-{arch}
 ```
 
-Supported platforms include `linux-x86_64`, `darwin-arm64`,
-`freebsd-amd64`, and others. If your platform is missing, the script
-lists available binaries and shows your system details.
+See [Pre-built Binaries](#pre-built-binaries) for the full list of
+shipped platforms. If your platform is missing, the script lists
+available binaries and shows your system details — build from source
+to add your own.
 
 ---
 
