@@ -57,9 +57,34 @@ The `castd/` directory is the framework. Treat it as read-only —
 updates arrive via `git pull upstream main`. Your work lives entirely
 in `workspace/`.
 
+### Setup
+
+Run the setup script from the project root:
+
+```bash
+./setup.sh
+```
+
+The script guides you through two choices:
+
+1. **Installation method**
+   - **Pre-built binary** — downloads the correct binary for your
+     platform. Fastest path.
+   - **Source Tree Setup** — compiles from source. The script detects
+     whether Rust is installed and offers to install it if missing.
+
+2. **Deployment mode**
+   - **Standalone** — binary stays in `castd/backend/bin/`, runs
+     per-project. Ideal for development and single-site setups.
+   - **Service** — installs to `/usr/local/bin/castd` with an rc.d
+     (FreeBSD) or systemd (Linux) unit. Manages multiple projects
+     as a daemon.
+
+No dependencies. Pure POSIX sh. Works on macOS, Linux, and FreeBSD.
+
 ### Pre-built Binaries
 
-The distribution ships with binaries for common platforms:
+The distribution ships with binaries for these platforms:
 
 | Binary | Platform |
 |--------|----------|
@@ -70,31 +95,23 @@ The distribution ships with binaries for common platforms:
 | `castd-freebsd-x86_64` | FreeBSD (x86_64) |
 
 The control script (`castd.sh`) detects your platform automatically
-and selects the correct binary. No manual step required.
+and selects the correct binary.
 
-### Building from Source
+### Building from Source (Manual)
 
-If your platform is not listed above, or you prefer to compile
-yourself, the source archive is available in each GitHub release
-as `src.tar.xz`.
-
-Extract and build:
+If you prefer to compile manually without `setup.sh`, the source
+archive is available in each GitHub release as `src.tar.xz`:
 
 ```bash
 tar xf src.tar.xz
 cd castd/backend
 cargo build --release
-```
-
-The compiled binary appears at `target/release/castd`. Copy it into
-place with the correct platform suffix:
-
-```bash
 cp target/release/castd ../bin/castd-$(uname -s | tr '[:upper:]' '[:lower:]')-$(uname -m)
 ```
 
-**Requirements:** A working [Rust](https://www.rust-lang.org/tools/install)
-toolchain (stable channel). No other dependencies — SQLite and Lua are
+This also works for platforms without a pre-built binary.
+**Requirements:** [Rust](https://www.rust-lang.org/tools/install)
+(stable channel). No other dependencies — SQLite and Lua are
 compiled in.
 
 ---
