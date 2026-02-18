@@ -1393,7 +1393,7 @@
         position: relative;
 
         &::after {
-            content: attr(data-cm-tooltip);
+            content: attr(data-cn-tooltip);
             position: absolute;
             bottom: 100%;
             left: 50%;

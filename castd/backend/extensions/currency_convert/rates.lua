@@ -7,7 +7,7 @@
     Demonstrates how to split extension logic into separate modules
     using the sandboxed require() function.
 
-    In production, these would be fetched via cm.io from an API.
+    In production, these would be fetched via cn.io from an API.
 ]]
 
 local M = {}
@@ -37,12 +37,12 @@ function M.convert(amount, from, to)
     local to_rate = M.get(to)
 
     if not from_rate then
-        cm.log.warn("Unknown source currency: " .. from)
+        cn.log.warn("Unknown source currency: " .. from)
         return nil
     end
 
     if not to_rate then
-        cm.log.warn("Unknown target currency: " .. to)
+        cn.log.warn("Unknown target currency: " .. to)
         return nil
     end
 

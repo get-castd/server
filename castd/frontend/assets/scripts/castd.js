@@ -5,7 +5,7 @@
 // Data-Bus, i18n, Preferences, Theme
 
 // Data-Bus: Centralised state management
-// Usage: cm.get("i18n.lang"), cm.set("prefs.theme", "dark")
+// Usage: cn.get("i18n.lang"), cn.set("prefs.theme", "dark")
 const data = (() => {
   const store = {
     i18n: {
@@ -43,7 +43,7 @@ const data = (() => {
 })();
 
 // i18n: Runtime language switching
-// Usage: cm.i18n.load("index.csv"), cm.i18n.t("key"), cm.i18n.switchLang("de-DE")
+// Usage: cn.i18n.load("index.csv"), cn.i18n.t("key"), cn.i18n.switchLang("de-DE")
 const i18n = (() => {
   const store = data.store.i18n;
 
@@ -95,12 +95,12 @@ const i18n = (() => {
 
   const switchLang = (newLang) => {
     lang(newLang);
-    localStorage.setItem("cm-lang", newLang);
+    localStorage.setItem("cn-lang", newLang);
     location.reload();
   };
 
   const init = () => {
-    const saved = localStorage.getItem("cm-lang");
+    const saved = localStorage.getItem("cn-lang");
     if (saved) lang(saved);
   };
 
@@ -108,9 +108,9 @@ const i18n = (() => {
 })();
 
 // Preferences: localStorage-backed settings
-// Usage: cm.prefs.set("theme", "dark"), cm.prefs.get("theme")
+// Usage: cn.prefs.set("theme", "dark"), cn.prefs.get("theme")
 const prefs = (() => {
-  const PREFIX = "cm-";
+  const PREFIX = "cn-";
 
   const get = (key) => {
     const val = localStorage.getItem(PREFIX + key);
@@ -139,7 +139,7 @@ const prefs = (() => {
 })();
 
 // Theme: Toggle dark/light mode
-// Usage: cm.theme.toggle(), cm.theme.set("dark"), cm.theme.get()
+// Usage: cn.theme.toggle(), cn.theme.set("dark"), cn.theme.get()
 const theme = (() => {
   const ATTR = "data-theme";
 
@@ -164,7 +164,7 @@ const theme = (() => {
 })();
 
 // Code: Transform pre>code blocks for line numbers and hover
-// Usage: cm.code.init() — auto-runs on DOMContentLoaded
+// Usage: cn.code.init() — auto-runs on DOMContentLoaded
 const code = (() => {
   const init = (root = document) => {
     root.querySelectorAll("pre > code").forEach((codeEl) => {
@@ -188,14 +188,14 @@ const code = (() => {
 })();
 
 // Namespace
-window.cm = window.cm || {};
-cm.data = data;
-cm.i18n = i18n;
-cm.prefs = prefs;
-cm.theme = theme;
-cm.code = code;
-cm.get = data.get;
-cm.set = data.set;
+window.cn = window.cn || {};
+cn.data = data;
+cn.i18n = i18n;
+cn.prefs = prefs;
+cn.theme = theme;
+cn.code = code;
+cn.get = data.get;
+cn.set = data.set;
 
 // Auto-init
 prefs.init();

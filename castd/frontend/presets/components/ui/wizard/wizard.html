@@ -1,9 +1,27 @@
-{# cm.ui.wizard — Multi-step wizard preset #}
-<div class="as-wizard"
-    {! if continue !}data-cm-continue="{{ continue }}"{! endif !}
-    {! if save !}data-cm-save="{{ save }}"{! endif !}
-    {! if style !}style="{{ style }}"{! endif !}>
-    <section>
-        {{ content | raw }}
-    </section>
+{# cn.ui.wizard — Multi-step wizard preset #}
+<div
+    class="as-wizard"
+    {!
+    if
+    continue
+    !}data-cn-continue="{{ continue }}"
+    {!
+    endif
+    !}
+    {!
+    if
+    save
+    !}data-cn-save="{{ save }}"
+    {!
+    endif
+    !}
+    {!
+    if
+    style
+    !}style="{{ style }}"
+    {!
+    endif
+    !}
+>
+    <section>{{ content | raw }}</section>
 </div>
