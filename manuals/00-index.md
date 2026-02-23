@@ -24,8 +24,8 @@ it with the server for a complete application stack.
 | 10 | [Presets](10-presets.md) | Preset system: syntax, resolution, slots, snippets |
 | 11 | [Persistence](11-persistence.md) | SQLite CRUD, auth, access control, volumes |
 | 12 | [Context](12-context.md) | Tag-based context system |
-
 | 13 | [Business Model](13-business.md) | Licensing and commercial offering |
+| 14 | [Extensions](14-extensions.md) | Lua extensions, cn.* API, event hooks, client detection |
 
 ### Reference
 

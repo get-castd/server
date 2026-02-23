@@ -543,6 +543,80 @@ A minimal blog with public reading and protected writing:
 
 ---
 
+## Data Management
+
+CASTD provides three operations for database backup, export, and import.
+All store files in a `backups/` directory alongside the database file.
+
+| Operation | Syntax | Effect |
+|-----------|--------|--------|
+| **Backup** | `cn.db.backup()` | Atomic binary copy via `VACUUM INTO` — fast, not portable |
+| **Export** | `cn.db.export()` | Portable SQL dump (`CREATE TABLE` + `INSERT INTO`) |
+| **Import** | `cn.db.import(file)` | Drop all tables, execute SQL dump — **destructive** |
+
+### Backup
+
+```lua
+local filename = cn.db.backup()
+-- Returns: "castd_backup_1708700000000000_a7f3b2.db"
+```
+
+Creates an atomic `.db` snapshot using SQLite's `VACUUM INTO`. Useful
+for quick snapshots before risky operations. The file is a standalone
+SQLite database.
+
+### Export
+
+```lua
+local filename = cn.db.export()
+-- Returns: "castd_export_1708700000000000_c9d4e1.sql"
+```
+
+Produces a `.sql` file with `CREATE TABLE`, `CREATE INDEX`, and
+`INSERT INTO` statements. The output is compatible with any SQLite
+instance — transfer it to another system and import it there.
+
+FTS virtual table shadow tables are excluded automatically (their data
+is managed by the virtual table itself).
+
+### Import
+
+```lua
+local pre_import_backup = cn.db.import("castd_export_1708700000000000_c9d4e1.sql")
+-- Returns: "castd_backup_1708700000000001_b2e5f3.db" (the safety backup)
+```
+
+**Import is destructive.** It drops every existing table and replaces
+the database contents with the SQL file. A safety backup is created
+automatically before the import — the returned filename identifies it.
+
+Only `.sql` files from the `backups/` directory are accepted.
+
+### Typical Workflow
+
+```
+Source system                    Target system
+─────────────                    ─────────────
+cn.db.export()
+  → castd_export_...sql
+                    ──transfer──→
+                                 cn.db.import("castd_export_...sql")
+                                   → auto-backup before import
+                                   → drop all → replay SQL
+```
+
+### CLI Access
+
+The same operations are available via the command line:
+
+```bash
+castd db backup              # Create snapshot
+castd db backup --list       # List all backups
+castd db backup --restore ID # Restore a backup by its unique ID
+```
+
+---
+
 ## Built-in Tables
 
 The server creates these tables automatically on first start:
