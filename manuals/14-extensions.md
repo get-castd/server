@@ -172,6 +172,59 @@ local valid = cn.crypto.verify("secret", hash)
 local token = cn.crypto.token()
 ```
 
+### cn.mail — Email
+
+Send plaintext email via the configured SMTP server.
+
+```lua
+local result = cn.mail.send("recipient@example.com", "Subject", "Body text")
+if result.success then
+    cn.log.info("Sent: " .. result.message_id)
+else
+    cn.log.error("Mail failed: " .. result.error)
+end
+```
+
+Returns a table:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `success` | boolean | Whether the message was accepted by the SMTP server |
+| `message_id` | string | Server-assigned message ID (only on success) |
+| `error` | string | Error description (only on failure) |
+
+#### Configuration
+
+Requires a `[mail]` section in `server.toml`:
+
+```toml
+[mail]
+from = "noreply@example.com"
+smtp_host = "localhost"
+smtp_port = 25
+# smtp_user = ""
+# smtp_pass = ""
+# smtp_tls = false
+```
+
+| Key | Default | Description |
+|-----|---------|-------------|
+| `from` | — | Sender address (required — mail is disabled without it) |
+| `smtp_host` | `localhost` | SMTP server hostname |
+| `smtp_port` | `25` | SMTP server port |
+| `smtp_user` | — | Username for authenticated relays |
+| `smtp_pass` | — | Password for authenticated relays |
+| `smtp_tls` | `false` | Use STARTTLS |
+
+When `from` is not set, `cn.mail.send()` returns
+`{success = false, error = "Mail not configured"}` without attempting a
+connection.
+
+#### Rate Limiting
+
+Mail sending is limited to `extensions.max_mail_per_min` (default: 10).
+The counter is global — shared across all extensions and requests.
+
 ---
 
 ## Event Hooks
