@@ -183,7 +183,19 @@ if result.success then
 else
     cn.log.error("Mail failed: " .. result.error)
 end
+
+-- With Reply-To (e.g. contact form):
+local result = cn.mail.send(
+    "admin@example.com",
+    "[Contact] Question",
+    "Message body",
+    "visitor@example.com"    -- optional: Reply-To header
+)
 ```
+
+The fourth parameter is optional. When provided, replies in the
+recipient's mail client will be addressed to the reply-to address
+rather than the `from` address configured in `server.toml`.
 
 Returns a table:
 
