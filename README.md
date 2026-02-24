@@ -55,12 +55,10 @@ Visit [castd.run](https://castd.run) for full documentation.
 
 ## Source Code
 
-The complete source code is available as `src.tar.xz` in each
-[GitHub Release](https://github.com/get-castd/server/releases).
+The complete source code is included in `castd/backend/src.tar.xz`.
 
 ```bash
-tar xf src.tar.xz
-cd src/backend
+tar xf castd/backend/src.tar.xz
 cargo build --release
 ```
 
