@@ -1,0 +1,25 @@
+# Copyright 2025 Vivian Voss. Licensed under the Apache License, Version 2.0.
+# SPDX-License-Identifier: Apache-2.0
+
+# CASTD systemd unit for Linux
+#
+# Install:
+#   cp castd.service /etc/systemd/system/
+#   systemctl daemon-reload
+#   systemctl enable castd
+#   systemctl start castd
+#
+# Config: /etc/castd/castd.toml
+
+[Unit]
+Description=CASTD Stackless Webserver
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/castd service start --name=all
+ExecStop=/usr/local/bin/castd service stop --name=all
+ExecReload=/usr/local/bin/castd service reload
+
+[Install]
+WantedBy=multi-user.target

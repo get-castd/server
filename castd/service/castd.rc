@@ -1,0 +1,46 @@
+#!/bin/sh
+# Copyright 2025 Vivian Voss. Licensed under the Apache License, Version 2.0.
+# SPDX-License-Identifier: Apache-2.0
+
+# CASTD rc.d script for FreeBSD
+#
+# Install:
+#   cp castd.rc /usr/local/etc/rc.d/castd
+#   chmod 755 /usr/local/etc/rc.d/castd
+#   sysrc castd_enable="YES"
+#
+# Config: /usr/local/etc/castd/castd.toml
+
+. /etc/rc.subr
+
+name="castd"
+rcvar="castd_enable"
+command="/usr/local/bin/castd"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+reload_cmd="${name}_reload"
+extra_commands="reload"
+
+castd_start() {
+    echo "Starting ${name}..."
+    ${command} service start --name=all
+}
+
+castd_stop() {
+    echo "Stopping ${name}..."
+    ${command} service stop --name=all
+}
+
+castd_status() {
+    ${command} service status
+}
+
+castd_reload() {
+    echo "Reloading ${name}..."
+    ${command} service reload
+}
+
+load_rc_config $name
+run_rc_command "$1"

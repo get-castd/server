@@ -27,3 +27,26 @@ port = 1337
 # [extensions.routes]
 # "/checkout" = "checkout"
 # "/contact/send" = "contact_form"
+
+# [mail]
+# SMTP configuration for cn.mail.send()
+# When 'from' is not set, mail sending is disabled.
+# from = "noreply@example.com"
+# smtp_host = "localhost"
+# smtp_port = 25
+# smtp_user = ""
+# smtp_pass = ""
+# smtp_tls = false
+
+# [volumes]
+# Named file storage directories for uploads and managed assets.
+# Files are stored on disk; filenames are saved as plain text in the database.
+#
+# Simple form (path only, defaults: max 10MB, all types accepted):
+# uploads = "/var/data/uploads"
+#
+# Extended form with validation:
+# [volumes.uploads]
+# path = "/var/data/uploads"
+# max_size = "10MB"
+# allowed_types = ["image/jpeg", "image/png", "image/webp", "application/pdf"]

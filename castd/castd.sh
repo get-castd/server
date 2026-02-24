@@ -221,11 +221,12 @@ castd.sh — Control script for CASTD
 Usage: ./castd.sh [command] [options]
 
 Commands:
-  start       Start the server
-  stop        Stop the server
-  restart     Restart the server
-  status      Show server status
+  start       Start the server (single instance)
+  stop        Stop the server (single instance)
+  restart     Restart the server (single instance)
+  status      Show server status (single instance)
   db          Database inspection and management
+  service     Multi-instance project management
   install     Install binary to /usr/local/bin
   uninstall   Remove binary from /usr/local/bin
   help        Show this help
@@ -271,6 +272,13 @@ cmd_db() {
     "$BINARY_PATH" db --dir "$PROJECT_DIR" "$@"
 }
 
+# Service command — passthrough to binary
+cmd_service() {
+    check_binary
+    shift  # Remove 'service'
+    "$BINARY_PATH" service "$@"
+}
+
 # Main
 COMMAND="${1:-help}"
 case "$COMMAND" in
@@ -279,6 +287,7 @@ case "$COMMAND" in
     restart)   cmd_restart "$@" ;;
     status)    cmd_status ;;
     db)        cmd_db "$@" ;;
+    service)   cmd_service "$@" ;;
     install)   cmd_install ;;
     uninstall) cmd_uninstall ;;
     help|--help|-h) cmd_help ;;
