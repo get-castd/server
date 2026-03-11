@@ -51,7 +51,7 @@ dist/
 
 ## Documentation
 
-Visit [castd.run](https://castd.run) for full documentation.
+Full documentation will be available at [castd.run](https://castd.run) — currently under construction, launching soon.
 
 ## Source Code
 
