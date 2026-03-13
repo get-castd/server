@@ -237,6 +237,32 @@ connection.
 Mail sending is limited to `extensions.max_mail_per_min` (default: 10).
 The counter is global — shared across all extensions and requests.
 
+### cn.ws — WebSocket Messaging
+
+Send messages to active WebSocket connections. Requires the WebSocket
+module (`src/ws/`) — connections are maintained via a thread-safe registry.
+
+```lua
+-- Broadcast to all connections on a path
+cn.ws.broadcast("/api/chat", '{"event":"new_message","text":"Hello"}')
+
+-- Send to a specific connection by ID
+cn.ws.send(42, '{"event":"update","data":"..."}')
+
+-- Send to all connections of a specific user
+cn.ws.send_to_user(7, '{"event":"notification","text":"New order"}')
+```
+
+| Function | Arguments | Description |
+|----------|-----------|-------------|
+| `cn.ws.broadcast(path, message)` | path (string), message (string) | Send to all connections on the given API path |
+| `cn.ws.send(connection_id, message)` | connection_id (integer), message (string) | Send to a single connection |
+| `cn.ws.send_to_user(user_id, message)` | user_id (integer), message (string) | Send to all connections belonging to a user |
+
+WebSocket connections are established via `{! api "/path" | websocket !}`
+in templates. The client-side JavaScript handles connection, reconnection,
+and event dispatching automatically.
+
 ---
 
 ## Event Hooks
@@ -245,13 +271,25 @@ Extensions can react to database changes by defining hook functions.
 Hooks fire after successful `cn.db` mutations — useful for audit logging,
 cache invalidation, notifications, and similar patterns.
 
-### Three Hook Types
+### Hook Types
 
 | Function | Fires after | Arguments |
 |----------|-------------|-----------|
 | `on_write(table, id, fields)` | `cn.db.set()` | table name, new row ID (integer), field data (table) |
 | `on_update(table, ids, fields)` | `cn.db.update()` | table name, affected IDs (array), updated fields (table) |
 | `on_delete(table, ids)` | `cn.db.delete()` | table name, deleted IDs (array) |
+| `on_ws_message(id, path, msg)` | Incoming WebSocket text frame | connection ID (integer), API path (string), message (string) |
+
+### Example: WebSocket Echo
+
+```lua
+-- echo/init.lua
+
+function on_ws_message(connection_id, path, message)
+    cn.log.info("WS [" .. path .. "] #" .. connection_id .. ": " .. message)
+    cn.ws.send(connection_id, message)
+end
+```
 
 ### Example: Audit Log
 
